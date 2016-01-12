@@ -63,7 +63,7 @@ public class DepartmentApplication {
 		frankMoore.addCourse(cs404);
 		frankMoore.addCourse(cs240);
 		frankMoore.addCourse(cs301);
-		frankMoore.addCourse(cs450);
+		//frankMoore.addCourse(cs450);
 
 		/*
 		 * /* The above course objects will go inside either a faculty object,

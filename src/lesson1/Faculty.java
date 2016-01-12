@@ -19,7 +19,11 @@ public class Faculty extends Person {
 
 	public int getTotalUnits() {
 
-		return 0;
+		int totalUnits = 0;
+		for(Course courses : courseList){
+			totalUnits += courses.getUnits();
+		}
+		return totalUnits;
 	}
 
 	public void addCourse(Course course){

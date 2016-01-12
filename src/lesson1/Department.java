@@ -37,9 +37,14 @@ public class Department {
 
 	}
 
-	public int unitsPerFaculty() {
+	public void unitsPerFaculty() {
 
-		return 0;
+		for (Person list : members) {
+			if (list instanceof Faculty) {
+				Faculty ff = (Faculty) list;
+				System.out.println(ff.name + ": " + ff.getTotalUnits());
+			}
+		}
 	}
 
 	public void addPerson(Person per) {
@@ -47,4 +52,3 @@ public class Department {
 		members.add(per);
 	}
 }
-
