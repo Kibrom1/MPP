@@ -1,19 +1,24 @@
 package lesson1;
 
+import java.util.ArrayList;
+
 public class Department {
-	
+
 	private String name;
-	
-	public Double getTotalSalary(){
-		
+	private ArrayList<Person> members;
+
+	public double getTotalSalary() {
+
 		return 0.0;
 	}
-	
-	public void showAllMembers(){
+
+	public void showAllMembers() {
 		
+
 	}
-	public int unitsPerFaculty(){
-		
+
+	public int unitsPerFaculty() {
+
 		return 0;
 	}
 
