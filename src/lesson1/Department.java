@@ -32,7 +32,7 @@ public class Department {
 		for (Person list : members) {
 			Class cls = list.getClass();
 			System.out.println("Name: " + list.getName() + " Phone: " + list.getPhone() + " Age: " + list.getAge()
-					+ " Type: " + cls.getName());
+					+ " Type: " + cls.getSimpleName());
 		}
 
 	}
