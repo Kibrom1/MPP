@@ -14,35 +14,58 @@ public class DepartmentApplication {
 		// create the objects that you need.
 
 		/*******************************************************
+		 *
+		 * // Create faculty objects
+		 */
+		Faculty frankMoore = new Faculty("Frank Moore", "472-5921", 43, 10000);
+		Faculty samHoward = new Faculty("Sam Howard", "472-7222", 55, 9500);
+		Faculty johnDoodle = new Faculty("John Doodle", "472-6190", 39, 8600);
+
+		dept.addPerson(frankMoore);
+		dept.addPerson(samHoward);
+		dept.addPerson(johnDoodle);
+		/*
 		 * 
-		 * // Create faculty objects Faculty frankMoore = new Faculty(
-		 * "Frank Moore","472-5921",43,10000); Faculty samHoward = new Faculty(
-		 * "Sam Howard","472-7222",55,9500); Faculty johnDoodle = new Faculty(
-		 * "John Doodle","472-6190",39,8600); dept.addFaculty(frankMoore);
-		 * dept.addFaculty(samHoward); dept.addFaculty(johnDoodle);
+		 * // Create student objects
+		 */
+		Student johnDoe = new Student("John Doe", "472-1121", 22, 4.0);
+		Student maryJones = new Student("Mary Jones", "472-7322", 32, 3.80);
+		Student leeJohnson = new Student("Lee Johnson", "472-6009", 19, 3.65);
+
+		dept.addPerson(johnDoe);
+
+		dept.addPerson(maryJones);
+		dept.addPerson(leeJohnson);
+
+		/*
 		 * 
-		 * 
-		 * // Create student objects Student johnDoe = new Student("John Doe"
-		 * ,"472-1121",22,4.0); Student maryJones = new Student("Mary Jones"
-		 * ,"472-7322",32,3.80); Student leeJohnson = new Student("Lee Johnson"
-		 * ,"472-6009",19,3.65); dept.addStudent(johnDoe);
-		 * dept.addStudent(maryJones); dept.addStudent(leeJohnson);
-		 * 
-		 * 
-		 * // Create staff objects Staff frankGore = new Staff("Frank Gore"
-		 * ,"472-3321",33,4050); Staff adamDavis = new Staff("Adam Davis"
-		 * ,"472-7552",50,5500); Staff davidHeck = new Staff("David Heck"
-		 * ,"472-8890",29,3600); dept.addStaff(frankGore);
-		 * dept.addStaff(adamDavis); dept.addStaff(davidHeck);
-		 * 
-		 * // Create course objects Course cs201 = new
-		 * Course("cs201","programming",4, johnDoodle); Course cs360 = new
-		 * Course("cs360","database",3, samHoward); Course cs404 = new
-		 * Course("cs404","compiler",4, johnDoodle); Course cs240 = new
-		 * Course("cs240","datastructure",2, johnDoodle); Course cs301 = new
-		 * Course("cs301","Software engg",3, samHoward); Course cs450 = new
-		 * Course("cs450","Advanced architecture",5,frankMoore);
-		 * 
+		 * // Create staff objects
+		 */
+		Staff frankGore = new Staff("Frank Gore", "472-3321", 33, 4050);
+		Staff adamDavis = new Staff("Adam Davis", "472-7552", 50, 5500);
+		Staff davidHeck = new Staff("David Heck", "472-8890", 29, 3600);
+
+		dept.addPerson(frankGore);
+		dept.addPerson(adamDavis);
+		dept.addPerson(davidHeck);
+
+		// Create course objects
+		Course cs201 = new Course("cs201", "programming", 4, johnDoodle);
+		Course cs360 = new Course("cs360", "database", 3, samHoward);
+		Course cs404 = new Course("cs404", "compiler", 4, johnDoodle);
+		Course cs240 = new Course("cs240", "datastructure", 2, johnDoodle);
+		Course cs301 = new Course("cs301", "Software engg", 3, samHoward);
+		Course cs450 = new Course("cs450", "Advanced architecture", 5, frankMoore);
+
+		frankMoore.addCourse(cs450);
+		frankMoore.addCourse(cs201);
+		frankMoore.addCourse(cs360);
+		frankMoore.addCourse(cs404);
+		frankMoore.addCourse(cs240);
+		frankMoore.addCourse(cs301);
+		frankMoore.addCourse(cs450);
+
+		/*
 		 * /* The above course objects will go inside either a faculty object,
 		 * or a student object. Not all of the course objects go into the same
 		 * object.
@@ -81,7 +104,7 @@ public class DepartmentApplication {
 			} // end switch
 		} // end while
 	} // end main()
-	// -------------------------------------------------------------
+		// -------------------------------------------------------------
 
 	public static void putText(String s) // writes string s to the screen
 	{

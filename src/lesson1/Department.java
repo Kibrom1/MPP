@@ -9,18 +9,18 @@ public class Department {
 
 	public Department(String name) {
 		this.name = name;
+		members = new ArrayList<Person>();
 	}
 
 	public double getTotalSalary() {
 
 		double totalSalary = 0.0;
 		for (Person list : members) {
-			if (list instanceof Faculty){
-				Faculty faculty = (Faculty)list;
+			if (list instanceof Faculty) {
+				Faculty faculty = (Faculty) list;
 				totalSalary += faculty.getSalary();
-			}
-			else if (list instanceof Staff){
-				Staff st = (Staff)list;
+			} else if (list instanceof Staff) {
+				Staff st = (Staff) list;
 				totalSalary += st.getSalary();
 			}
 		}
@@ -42,16 +42,9 @@ public class Department {
 		return 0;
 	}
 
-	public void addPerson() {
+	public void addPerson(Person per) {
 
-		members = new ArrayList<Person>();
-
+		members.add(per);
 	}
-
 }
-//Questions 
-/*
- * how the add person or add course is managed
- * how the unitsperFaculty is calculated
- * */
- */
+

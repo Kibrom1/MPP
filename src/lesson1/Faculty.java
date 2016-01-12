@@ -10,6 +10,7 @@ public class Faculty extends Person {
 	public Faculty(String name, String phone, int age, double salary ){
 		super(name,phone,age);
 		this.salary = salary;
+		courseList = new ArrayList<Course>();
 	}
 	
 	public double getSalary(){
@@ -21,4 +22,7 @@ public class Faculty extends Person {
 		return 0;
 	}
 
+	public void addCourse(Course course){
+		courseList.add(course);
+	}
 }

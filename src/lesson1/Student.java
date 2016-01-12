@@ -10,6 +10,7 @@ public class Student extends Person {
 	public Student(String name, String phone, int age, double GPA) {
 		super(name, phone, age);
 		this.GPA = GPA;
+		courseList = new ArrayList<Course>();
 	}
 
 	public double getGPA() {
@@ -19,5 +20,9 @@ public class Student extends Person {
 	public int getTotalUnits() {
 
 		return 0;
+	}
+	
+	public void addCourse(Course course){
+		courseList.add(course);
 	}
 }
