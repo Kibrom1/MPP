@@ -23,7 +23,8 @@ public class Position {
 
 	public void print() {
 
-		System.out.println("Title: " + title + " Description: " + description /*+ " Total Salary: $" + getSalary()*/);
+		System.out.println("Title: " + title + " Description: "
+				+ description /* + " Total Salary: $" + getSalary() */);
 
 		for (Employee emp : employeeList)
 			emp.print();

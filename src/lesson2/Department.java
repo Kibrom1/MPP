@@ -37,4 +37,8 @@ public class Department {
 		return totalSalary;
 	}
 
+	public Company getCompany() {
+		return company;
+	}
+
 }
