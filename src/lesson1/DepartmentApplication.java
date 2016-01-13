@@ -24,6 +24,7 @@ public class DepartmentApplication {
 		dept.addPerson(frankMoore);
 		dept.addPerson(samHoward);
 		dept.addPerson(johnDoodle);
+
 		/*
 		 * 
 		 * // Create student objects
@@ -63,7 +64,9 @@ public class DepartmentApplication {
 		frankMoore.addCourse(cs404);
 		frankMoore.addCourse(cs240);
 		frankMoore.addCourse(cs301);
-		//frankMoore.addCourse(cs450);
+		// frankMoore.addCourse(cs450);
+		
+		frankMoore.displayFacultyStudents();
 
 		/*
 		 * /* The above course objects will go inside either a faculty object,
@@ -78,6 +81,8 @@ public class DepartmentApplication {
 		 */
 
 		/********************************************************/
+
+		//dept.displayFacultyStudents(frankMoore);
 
 		double totsalary = 0;
 

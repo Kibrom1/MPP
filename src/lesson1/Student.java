@@ -17,12 +17,21 @@ public class Student extends Person {
 		return GPA;
 	}
 
+	public ArrayList<Course> getCourses() {
+		return courseList;
+	}
+
 	public int getTotalUnits() {
 
-		return 0;
+		int totalUnits = 0;
+		for (Course courses : courseList) {
+			totalUnits += courses.getUnits();
+		}
+		return totalUnits;
 	}
-	
-	public void addCourse(Course course){
+
+	public void addCourse(Course course) {
 		courseList.add(course);
 	}
+
 }
