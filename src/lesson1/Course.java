@@ -19,11 +19,15 @@ public class Course {
 		return number;
 	}
 
-	public String getTitle(){
+	public String getTitle() {
 		return title;
 	}
 
 	public int getUnits() {
 		return units;
+	}
+
+	public Faculty getFaculty() {
+		return faculty;
 	}
 }

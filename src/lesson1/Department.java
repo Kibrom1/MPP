@@ -22,10 +22,10 @@ public class Department {
 			} else if (list instanceof Staff) {
 				Staff st = (Staff) list;
 				totalSalary += st.getSalary();
-			} /*else if(list instanceof StaffStudet){
-				StaffStudet stst = (StaffStudet)list;
-				totalSalary += stst.getSalary();
-			}*/
+			} /*
+				 * else if(list instanceof StaffStudet){ StaffStudet stst =
+				 * (StaffStudet)list; totalSalary += stst.getSalary(); }
+				 */
 		}
 		return totalSalary;
 	}
@@ -53,5 +53,28 @@ public class Department {
 	public void addPerson(Person per) {
 
 		members.add(per);
+	}
+
+	public void displayStudentPerFaulty(Faculty fct) {
+		System.out.println("Faculty Name: " + fct.getName());
+		ArrayList<Course> courseList;
+		Faculty faculty;
+		for (Person per : members) {
+			//System.out.println("Inside Person");
+			if (per instanceof Student) {
+				//System.out.println("Inside Student");
+				Student std = (Student) per;
+				courseList = std.getCourses();
+				for (Course course : courseList) {
+					//System.out.println("Inside Course");
+					faculty = course.getFaculty();
+					if(fct.getName().equals(faculty.getName())){
+						System.out.println("Student Name: " + std.getName());
+						
+					}
+				}
+			}
+		}
+
 	}
 }

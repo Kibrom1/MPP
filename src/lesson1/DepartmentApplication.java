@@ -66,6 +66,12 @@ public class DepartmentApplication {
 		frankMoore.addCourse(cs301);
 		// frankMoore.addCourse(cs450);
 		
+		
+		johnDoe.addCourse(cs450);
+		johnDoe.addCourse(cs404);
+		maryJones.addCourse(cs404);
+		
+		
 		frankMoore.displayFacultyStudents();
 
 		/*
@@ -82,7 +88,7 @@ public class DepartmentApplication {
 
 		/********************************************************/
 
-		//dept.displayFacultyStudents(frankMoore);
+		dept.displayStudentPerFaulty(johnDoodle);
 
 		double totsalary = 0;
 
