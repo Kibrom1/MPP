@@ -34,6 +34,10 @@ public class Employee {
 		return salary;
 	}
 
+	public Position getPostion() {
+		return positionHeld;
+	}
+
 	public void print() {
 
 		System.out.println("Employee Id: " + employeeId + " Name: " + firstName + " " + middleInitial + " " + lastName

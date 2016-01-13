@@ -2,8 +2,6 @@ package lesson2;
 
 import java.text.NumberFormat;
 
-import javax.swing.text.NumberFormatter;
-
 public class HRApplication {
 
 	public static void main(String[] args) {
