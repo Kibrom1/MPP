@@ -5,14 +5,14 @@ public class Course {
 	private String number;
 	private String title;
 	private int units;
-	Faculty facultyMember;
+	Faculty faculty;
 
 	public Course(String number, String title, int units, Faculty member) {
 
 		this.number = number;
 		this.title = title;
 		this.units = units;
-		this.facultyMember = member;
+		this.faculty = member;
 	}
 
 	public String getNumber() {
