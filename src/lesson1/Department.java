@@ -22,7 +22,10 @@ public class Department {
 			} else if (list instanceof Staff) {
 				Staff st = (Staff) list;
 				totalSalary += st.getSalary();
-			}
+			} /*else if(list instanceof StaffStudet){
+				StaffStudet stst = (StaffStudet)list;
+				totalSalary += stst.getSalary();
+			}*/
 		}
 		return totalSalary;
 	}
