@@ -30,10 +30,14 @@ public class Employee {
 		return dateOfBirth;
 	}
 
+	public double getSalary() {
+		return salary;
+	}
+
 	public void print() {
 
-		System.out.println("Id: " + employeeId + " Name: " + firstName + " " + middleInitial + " " + lastName + " SSN: "
-				+ SSN + " Date of birth: " + dateOfBirth + " Salary: " + salary);
+		System.out.println("Employee Id: " + employeeId + " Name: " + firstName + " " + middleInitial + " " + lastName
+				+ " SSN: " + SSN + " Date of birth: " + dateOfBirth + " Salary: " + salary);
 	}
 
 }

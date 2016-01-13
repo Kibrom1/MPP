@@ -64,7 +64,12 @@ public class DepartmentApplication {
 		frankMoore.addCourse(cs404);
 		frankMoore.addCourse(cs240);
 		frankMoore.addCourse(cs301);
-		// frankMoore.addCourse(cs450);
+		
+		samHoward.addCourse(cs450);
+		samHoward.addCourse(cs240);
+		
+		johnDoodle.addCourse(cs360);
+		johnDoodle.addCourse(cs201);
 		
 		
 		johnDoe.addCourse(cs450);
@@ -99,8 +104,9 @@ public class DepartmentApplication {
 			switch (choice) {
 			case 'g':
 				totsalary = dept.getTotalSalary();
-				putText("Total sum of all salaries is:");
-				putText(String.valueOf(totsalary) + "\n");
+				putText("Total sum of all salaries is: ");
+				//putText(String.valueOf(totsalary) + "\n");
+				System.out.println("$" + totsalary + "\n");
 				break;
 			case 's':
 				dept.showAllMembers();

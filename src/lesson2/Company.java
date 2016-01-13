@@ -14,13 +14,20 @@ public class Company {
 	}
 
 	public void print() {
-		System.out.println("Name: " + name);
+		System.out.println("Company Name: " + name /* + " Total Salary: $" + getSalary()*/);
 		for (Department dept : departmentList)
 			dept.print();
 
 	}
-	
-	public void addDepartment(Department dept){
+
+	public void addDepartment(Department dept) {
 		departmentList.add(dept);
+	}
+
+	public double getSalary() {
+		double totalSalary = 0;
+		for (Department dept : departmentList)
+			totalSalary += dept.getSalary();
+		return totalSalary;
 	}
 }

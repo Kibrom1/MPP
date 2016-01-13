@@ -23,15 +23,27 @@ public class Position {
 
 	public void print() {
 
-		System.out.println("Title: " + title + "Description: " + description);
+		System.out.println("Title: " + title + " Description: " + description /*+ " Total Salary: $" + getSalary()*/);
 
 		for (Employee emp : employeeList)
 			emp.print();
 	}
-	
 
-	public void addEmployee(Employee emp){
+	public void addEmployee(Employee emp) {
 		employeeList.add(emp);
 	}
-	
+
+	public Department getDepartment() {
+
+		return dept;
+	}
+
+	public double getSalary() {
+		// TODO Auto-generated method stub
+		double totalSalary = 0;
+		for (Employee emp : employeeList)
+			totalSalary += emp.getSalary();
+		return totalSalary;
+	}
+
 }
