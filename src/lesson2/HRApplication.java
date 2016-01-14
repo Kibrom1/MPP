@@ -52,8 +52,9 @@ public class HRApplication {
 		comp.addDepartment(itDept);
 
 		comp.print();
-		System.out.println("Company Total Salary: ");// CurrencyFormatter(amount));
+		System.out.print("Company Total Salary: ");// CurrencyFormatter(amount));
 		CurrencyFormatter(comp.getSalary());
+		System.out.println();
 
 	}
 
