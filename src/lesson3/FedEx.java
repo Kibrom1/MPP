@@ -2,8 +2,8 @@ package lesson3;
 
 public class FedEx extends Package {
 
-	public FedEx(String desc, double weight, String zone) {
-		super(desc, weight, zone);
+	public FedEx(String desc, double weight, String zone, String sender) {
+		super(desc, weight, zone, sender);
 		// TODO Auto-generated constructor stub
 	}
 
