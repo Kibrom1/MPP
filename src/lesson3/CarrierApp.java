@@ -37,11 +37,11 @@ public class CarrierApp {
 			discount = 0;
 
 		if (upsCost > usMailCost && upsCost > fedexCost)
-			System.out.printf(" %s %2d",pck.description + "\t" + (upsCost -= upsCost * discount) + "\t" + "UPS");
+			System.out.printf(pck.description + "\t" + (upsCost -= upsCost * discount) + "\t" + "UPS");
 		else if (usMailCost > upsCost && usMailCost > fedexCost)
-			System.out.printf(" %s %2d", pck.description + "\t" + (usMailCost -= usMailCost * discount) + "\t" + "USMail");
+			System.out.printf(pck.description + "\t" + (usMailCost -= usMailCost * discount) + "\t" + "USMail");
 		else
-			System.out.printf(" %s %2d",pck.description + "\t" + (fedexCost -= fedexCost * discount) + "\t" + "FedEx");
+			System.out.printf(pck.description + "\t" + (fedexCost -= fedexCost * discount) + "\t" + "FedEx");
 
 	}
 
