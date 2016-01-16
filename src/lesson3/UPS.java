@@ -2,6 +2,8 @@ package lesson3;
 
 public class UPS extends Package {
 	
+	private final double  RATE = 0.45;
+	
 	public UPS(String desc, double weight, String zone, String sender) {
 		super(desc, weight, zone,sender);
 		// TODO Auto-generated constructor stub
@@ -9,7 +11,7 @@ public class UPS extends Package {
 
 	public double cost(){
 		
-		return 0.45 * weight;
+		return RATE * weight;
 	}
 
 }

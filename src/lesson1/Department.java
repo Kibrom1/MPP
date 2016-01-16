@@ -6,6 +6,7 @@ public class Department {
 
 	private String name;
 	private ArrayList<Person> members;
+	// private ArrayList
 
 	public Department(String name) {
 		this.name = name;
@@ -60,17 +61,17 @@ public class Department {
 		ArrayList<Course> courseList;
 		Faculty faculty;
 		for (Person per : members) {
-			//System.out.println("Inside Person");
+			// System.out.println("Inside Person");
 			if (per instanceof Student) {
-				//System.out.println("Inside Student");
+				// System.out.println("Inside Student");
 				Student std = (Student) per;
 				courseList = std.getCourses();
 				for (Course course : courseList) {
-					//System.out.println("Inside Course");
+					// System.out.println("Inside Course");
 					faculty = course.getFaculty();
-					if(fct.getName().equals(faculty.getName())){
+					if (fct.getName().equals(faculty.getName())) {
 						System.out.println("Student Name: " + std.getName());
-						
+
 					}
 				}
 			}

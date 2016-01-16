@@ -9,12 +9,16 @@ public class Position {
 	private Department dept;
 	private ArrayList<Employee> employeeList;
 
+	private Position superior;
+	private ArrayList<Position> inferior;
+
 	public Position(String title, String desc, Department dept) {
 		this.title = title;
 		this.description = desc;
 		this.dept = dept;
 
 		employeeList = new ArrayList<Employee>();
+		inferior = new ArrayList<Position>();
 	}
 
 	public String getTitle() {
@@ -46,5 +50,63 @@ public class Position {
 			totalSalary += emp.getSalary();
 		return totalSalary;
 	}
+
+	public void addInferior(Position infer) {
+
+		inferior.add(infer);
+	}
+
+	public void setSuperior(Position superior) {
+		this.superior = superior;
+	}
+
+	public Position getSuperior() {
+		return superior;
+	}
+
+	/*
+	 * public boolean isManager(Employee emp) { Position pos = emp.getPostion();
+	 * if (pos.equals(superior)) return true; else return false;
+	 * 
+	 * }
+	 */
+	public void printDownLine() {
+
+		for (Position pos : inferior) {
+			System.out.println("  Title: " + pos.title + " Description: " + pos.description);
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dept == null) ? 0 : dept.hashCode());
+		result = prime * result + ((superior == null) ? 0 : superior.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Position other = (Position) obj;
+		if (dept == null) {
+			if (other.dept != null)
+				return false;
+		} else if (!dept.equals(other.dept))
+			return false;
+		if (superior == null) {
+			if (other.superior != null)
+				return false;
+		} else if (!superior.equals(other.superior))
+			return false;
+		return true;
+	}
+	
 
 }
