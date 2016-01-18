@@ -1,6 +1,7 @@
 package lesson3;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class CarrierApp {
@@ -47,6 +48,7 @@ public class CarrierApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		Scanner sc = new Scanner(System.in);
 		try {
 			while (true) {
