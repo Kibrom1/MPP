@@ -8,10 +8,13 @@ public class ItemCopy {
 	private Item item;
 	private Loan loan;
 
-	public ItemCopy(String id, Item item, Loan loan) {
+	public ItemCopy(String id, Item item) {
 
 		this.copyId = id;
 		this.item = item;
+	}
+
+	public void setLoan(Loan loan) {
 		this.loan = loan;
 	}
 

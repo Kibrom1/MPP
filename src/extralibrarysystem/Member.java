@@ -53,8 +53,10 @@ public class Member {
 
 		if (item.getAvailable()) {
 			Date dateReturn = dateAdd(20);
-			Loan loan = new Loan(new Date(), dateReturn, item);
+			Loan loan = new Loan(new Date(),dateReturn);// = new Loan(new Date(), dateReturn);
+			loan.setItemCopy(item);
 			addLoan(loan);
+			item.setAvailable(false);
 		}
 
 	}
@@ -71,7 +73,7 @@ public class Member {
 	}
 
 	// A method used to add days to a date
-	private Date dateAdd(int days) {
+	public Date dateAdd(int days) {
 		Date dateNow = new Date();
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(dateNow);

@@ -9,16 +9,19 @@ public class Loan {
 	private ItemCopy itemCopy;
 	// private
 
-	public Loan(Date checkOut, Date returnDate, ItemCopy copy) {
+	public Loan(Date checkOut, Date returnDate) {
 
 		this.checkOutDate = checkOut;
 		this.returnDate = returnDate;
-		this.itemCopy = copy;
 
 	}
 
 	public ItemCopy getItemCopy() {
 
 		return itemCopy;
+	}
+
+	public void setItemCopy(ItemCopy copy) {
+		this.itemCopy = copy;
 	}
 }
