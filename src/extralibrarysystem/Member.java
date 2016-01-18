@@ -64,8 +64,10 @@ public class Member {
 	public void returnItem(ItemCopy item) {
 		for (Loan loan : loanList) {
 			if (loan.getItemCopy().equals(item)) {
-				removeLoan(loan);
+				//System.out.println("in return method");
 				item.setAvailable(true);
+				removeLoan(loan);
+				
 				break;
 			}
 		}
