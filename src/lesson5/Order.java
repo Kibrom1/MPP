@@ -15,9 +15,9 @@ public class Order {
 		this.orderDate = orderDate;
 		this.orderAmount = orderAmount;
 	}
-	
-	public double getOrderAmount(){
-		
+
+	public double getOrderAmount() {
+
 		return this.orderAmount;
 	}
 

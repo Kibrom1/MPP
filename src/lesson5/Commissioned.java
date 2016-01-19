@@ -32,7 +32,7 @@ public class Commissioned extends Employee {
 	@Override
 	public double calcGrosspay() {
 		// TODO Auto-generated method stub
-		return 0;
+		return calcCommission();
 	}
 
 }

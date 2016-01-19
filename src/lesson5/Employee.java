@@ -12,7 +12,7 @@ public abstract class Employee {
 	public Employee(String id, PayCheck check) {
 
 		this.empId = id;
-		this.payCheck = check;
+		//this.payCheck = check;
 	}
 
 	public void print() {
@@ -28,13 +28,18 @@ public abstract class Employee {
 		double local = (grossPay * 1) / 100;
 		double mediCare = (grossPay * 3) / 100;
 		double social = (grossPay * 7.5) / 100;
-
-		//return new PayCheck(grossPay, fica, state, local, mediCare, social,
-			//	new DateRange(DateRange.getFirstDayOfMonth(new Date()), DateRange.getLatDayOfMonth(new Date())));
+		Calendar startDate = Calendar.getInstance();
+		startDate.set(2016, 1, 1);
+		Calendar endDate = Calendar.getInstance();
+		endDate.set(2016, 1, 31);
 		
-		return null;
+		
+		return new PayCheck(grossPay, fica, state, local, mediCare, social, new DateRange(startDate, endDate));
 	}
 
+	public void setPayCheck(){
+		//this.payCheck = calc
+	}
 	public abstract double calcGrosspay();
 
 }
