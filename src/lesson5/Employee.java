@@ -8,12 +8,10 @@ public abstract class Employee {
 	private String empId;
 
 	private PayCheck payCheck;
-	
 
-	public Employee(String id, PayCheck check) {
+	public Employee(String id) {
 
 		this.empId = id;
-		//this.payCheck = check;
 	}
 
 	public void print() {
@@ -33,14 +31,14 @@ public abstract class Employee {
 		startDate.set(2016, 1, 1);
 		Calendar endDate = Calendar.getInstance();
 		endDate.set(2016, 1, 31);
-		
-		
+
 		return new PayCheck(grossPay, fica, state, local, mediCare, social, new DateRange(startDate, endDate));
 	}
 
-	public void setPayCheck(){
-		//this.payCheck = calc
+	public void setPayCheck(PayCheck check) {
+		this.payCheck = check;
 	}
+
 	public abstract double calcGrosspay();
 
 }

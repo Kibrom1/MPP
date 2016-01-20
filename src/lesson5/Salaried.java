@@ -4,8 +4,8 @@ public class Salaried extends Employee {
 
 	double salary;
 
-	public Salaried(String id, PayCheck check, double salary) {
-		super(id, check);
+	public Salaried(String id, /* PayCheck check, */ double salary) {
+		super(id);
 		// TODO Auto-generated constructor stub
 		this.salary = salary;
 	}

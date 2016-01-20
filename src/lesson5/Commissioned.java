@@ -8,8 +8,8 @@ public class Commissioned extends Employee {
 	private double baseSalary;
 	private ArrayList<Order> orderList;
 
-	public Commissioned(String id, PayCheck check, double comm, double salary) {
-		super(id, check);
+	public Commissioned(String id, /*PayCheck check,*/ double comm, double salary) {
+		super(id);
 		// TODO Auto-generated constructor stub
 		this.commission = comm;
 		this.baseSalary = salary;
