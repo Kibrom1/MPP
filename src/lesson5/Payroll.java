@@ -14,9 +14,10 @@ public class Payroll {
 		startDate.set(2016, 1, 1);
 		Calendar endDate = Calendar.getInstance();
 		endDate.set(2016, 1, 31);
-		DateRange range = new DateRange(startDate, endDate);
+		//DateRange range = new DateRange(startDate, endDate);
 		
 		//Employee emp = new Hourly ("Kibrom", range, 10, 20);
+		
 	}
 
 }

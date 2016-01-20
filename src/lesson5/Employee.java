@@ -8,6 +8,7 @@ public abstract class Employee {
 	private String empId;
 
 	private PayCheck payCheck;
+	
 
 	public Employee(String id, PayCheck check) {
 
