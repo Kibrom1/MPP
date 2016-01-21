@@ -45,8 +45,8 @@ public class Department {
 
 		for (Person list : members) {
 			if (list instanceof Faculty) {
-				Faculty ff = (Faculty) list;
-				System.out.println(ff.getName() + ": " + ff.getTotalUnits());
+				Faculty faculty = (Faculty) list;
+				System.out.println(faculty.getName() + ": " + faculty.getTotalUnits());
 			}
 		}
 	}

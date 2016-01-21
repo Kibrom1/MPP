@@ -77,7 +77,7 @@ public class DepartmentApplication {
 		maryJones.addCourse(cs404);
 		
 		
-		frankMoore.displayFacultyStudents();
+		//frankMoore.displayFacultyStudents();
 
 		/*
 		 * /* The above course objects will go inside either a faculty object,

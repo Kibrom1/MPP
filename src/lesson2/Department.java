@@ -51,6 +51,7 @@ public class Department {
 
 	public Position getDepartmentHead() {
 		Position head = positionList.get(0).getSuperior();
+		//Position head2 = positionList.get(1).getSuperior();
 		for (Position pos : positionList) {
 			if (!(pos.getSuperior().equals(head)))
 				head = pos;

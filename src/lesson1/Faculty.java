@@ -30,6 +30,6 @@ public class Faculty extends Person {
 		courseList.add(course);
 	}
 	public void displayFacultyStudents(){
-		System.out.println("The list of students for faculty: " + name);
+		System.out.println("Name of faculty: " + getName());
 	}
 }
