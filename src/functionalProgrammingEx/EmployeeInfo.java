@@ -26,26 +26,30 @@ public class EmployeeInfo {
 		}
 	}
 
-	public void sort(List<Employee> emps, final SortMethod sorting){
-		class EmployeeComparator implements Comparator<Employee>{
+	public void sort(List<Employee> emps, final SortMethod sorting) {
+		class EmployeeComparator implements Comparator<Employee> {
 
 			@Override
 			public int compare(Employee emp1, Employee emp2) {
 				// TODO Auto-generated method stub
-				if(sorting == SortMethod.BYNAME)
+				if (sorting == SortMethod.BYNAME) {
 					return emp1.getName().compareTo(emp2.getName());
-				else if(sorting == SortMethod.BYSALARY){
-					if(emp1.getSalary() == emp2.getSalary()) return 0;
-					else if(emp1.getSalary() < emp2.getSalary()) return -1;
-					else return 1;
-					
+				} else if (sorting == SortMethod.BYSALARY) {
+					if (emp1.getSalary() == emp2.getSalary())
+						return 0;
+					else if (emp1.getSalary() < emp2.getSalary())
+						return -1;
+					else
+						return 1;
+
 				}
-					
+				return 0;
+
 			}
-			
-			
+
 		}
-		
+		Collections.sort(emps,new EmployeeComparator());
+
 	}
 
 	public static void main(String[] args) {
