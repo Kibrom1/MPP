@@ -11,6 +11,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import java8homework.Employee.SortMethod;
+
 public class ProcessingEmployees {
 	public static void main(String[] args) {
 		// initialize array of Employees
@@ -21,7 +23,11 @@ public class ProcessingEmployees {
 
 		// get List view of the Employees
 		List<Employee> list = Arrays.asList(employees);
-
+		
+		//System.out.println("============");
+		//System.out.println("Sorted Employee by Name: " +Employee.sortEmployee(list, SortMethod.BYNAME);));
+		//System.out.println("Sorted Employee by Salary: " + Employee.sortEmployee(list, SortMethod.BYSALARY));
+		//System.out.println("============");
 		// display all Employees
 		System.out.println("Complete Employee list:");
 		list.stream().forEach(System.out::println);
