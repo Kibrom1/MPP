@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class EmployeeInfo {
 
@@ -12,6 +15,10 @@ public class EmployeeInfo {
 	};
 
 	SortMethod sorting;
+
+	public EmployeeInfo() {
+
+	}
 
 	public EmployeeInfo(SortMethod sorting) {
 		this.sorting = sorting;
@@ -48,7 +55,35 @@ public class EmployeeInfo {
 			}
 
 		}
-		Collections.sort(emps,new EmployeeComparator());
+		Collections.sort(emps, new EmployeeComparator());
+
+	}
+
+	public static List<String> findStartWithChar(List<String> lists, char c) {
+		List<String> startsWith = new ArrayList<>();
+
+		for (String lst : lists) {
+			String str = "" + c;
+			if (lst.startsWith(str)) {
+				startsWith.add(lst);
+			}
+		}
+
+		return startsWith;
+	}
+
+	public static List<String> findStartWithChar(List<String> lst, String letter) {
+
+		// using sream
+		/*
+		 * return lst.stream().filter(name -> name.startsWith(letter)).map(name
+		 * -> name.toUpperCase()) .collect(Collectors.toList());
+		 */
+
+		// using parallel stream
+
+		return lst.parallelStream().filter(name -> name.startsWith(letter)).map(name -> name.toUpperCase())
+				.collect(Collectors.toList());
 
 	}
 
@@ -70,5 +105,38 @@ public class EmployeeInfo {
 		empinfo.sort(emps);
 		System.out.println(emps);
 
+		System.out.println("Sorting using inner classes by name!");
+		empinfo = new EmployeeInfo();
+		empinfo.sort(emps, SortMethod.BYNAME);
+		System.out.println(emps);
+
+		System.out.println("Sorting using inner classes by salary!");
+		empinfo = new EmployeeInfo();
+		empinfo.sort(emps, SortMethod.BYSALARY);
+		System.out.println(emps);
+
+		Consumer<Employee> emp = new Consumer() {
+
+			@Override
+			public void accept(Object emps) {
+				// TODO Auto-generated method stub
+				System.out.println((Employee) emps);
+			}
+		};
+
+		System.out.println("==using consumer and foreach method==");
+		emps.forEach(emp);
+
+		BiFunction<Integer, Integer, Integer> ff = (x, y) -> 2 * x - y;
+		System.out.println("Bifunction: " + ff.apply(4, 5));
+
+		TriFunction<Integer, Integer, Integer, Integer> tri = (x, y, z) -> x + y + z;
+		System.out.println("User defined: " + tri.apply(3, 4, 6));
+
+		List<String> lst = new ArrayList<>();
+		lst.add("china");
+		lst.add("kibrom");
+		lst.add("kebede");
+		System.out.println(empinfo.findStartWithChar(lst, 'c'));
 	}
 }
