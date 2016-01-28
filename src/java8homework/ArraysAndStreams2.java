@@ -2,9 +2,20 @@ package java8homework;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class ArraysAndStreams2 {
+	
+	public static List<String> startsWith(List<String> lst, char c){
+		String letter = "" + c;
+		List<String> startsWith = lst.stream()
+				.filter(name->name.startsWith(letter))
+				.map(name->name.toUpperCase())
+				.collect(Collectors.toList());
+		return startsWith;
+	}
+	
 	public static void main(String[] args) {
 		String[] strings = { "Red", "orange", "Yellow", "green", "Blue", "indigo", "Violet" };
 

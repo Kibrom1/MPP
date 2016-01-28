@@ -80,23 +80,24 @@ public class Employee {
 
 	// Comparator<Employee> empCopare = (Employee e1, Employee e2)->{if()}
 
-	static Comparator<Employee> employeeCompare = (e1, e2) -> {
-		if (method == SortMethod.BYNAME) {
-			return e1.getFirstName().compareTo(e2.getFirstName());
-		} else if (method == SortMethod.BYSALARY) {
-			if (e1.getSalary() == e2.getSalary())
-				return 0;
-			else if (e1.getSalary() < e2.getSalary())
-				return -1;
-			else
-				return 1;
-		}
-		return 0;
-	};
 
 	public static void sortEmployee(List<Employee> emps, SortMethod sorting) {
 		
-		Collections.sort(emps, employeeCompare);
+		Collections.sort(emps, (e1,e2)->{
+			if(sorting == SortMethod.BYNAME)
+				return e1.getName().compareTo(e2.getName());
+			else if(sorting == SortMethod.BYSALARY){
+				if(e1.getSalary() == e2.getSalary())
+					return 0;
+				else if(e1.getSalary() > e2.getSalary())
+					return 1;
+				else
+					return -1;
+			}
+			return 0;
+					
+		});
+		
 
 	}
 

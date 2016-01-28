@@ -10,6 +10,10 @@ import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import java.util.function.*;
 
 import java8homework.Employee.SortMethod;
 
@@ -19,15 +23,13 @@ public class ProcessingEmployees {
 		Employee[] employees = { new Employee("Jason", "Red", 5000, "IT"), new Employee("Ashley", "Green", 7600, "IT"),
 				new Employee("Matthew", "Indigo", 3587.5, "Sales"),
 				new Employee("James", "Indigo", 4700.77, "Marketing"), new Employee("Luke", "Indigo", 6200, "IT"),
-				new Employee("Jason", "Blue", 3200, "Sales"), new Employee("Wendy", "Brown", 4236.4, "Marketing") };
+				new Employee("Jason", "Blue", 3200, "Sales"), new Employee("Wendy", "Brown", 4236.4, "Marketing"),
+				new Employee("Berhe", "Yellow", 4300, "Marketing"),
+				new Employee("Belete", "Yellow", 4300, "Marketing") };
 
 		// get List view of the Employees
 		List<Employee> list = Arrays.asList(employees);
-		
-		//System.out.println("============");
-		//System.out.println("Sorted Employee by Name: " +Employee.sortEmployee(list, SortMethod.BYNAME);));
-		//System.out.println("Sorted Employee by Salary: " + Employee.sortEmployee(list, SortMethod.BYSALARY));
-		//System.out.println("============");
+
 		// display all Employees
 		System.out.println("Complete Employee list:");
 		list.stream().forEach(System.out::println);
@@ -95,5 +97,33 @@ public class ProcessingEmployees {
 		// average of Employee salaries with DoubleStream average method
 		System.out.printf("Average of Employees' salaries: %.2f%n",
 				list.stream().mapToDouble(Employee::getSalary).average().getAsDouble());
+		// #2 a
+		System.out.println("===homework starts from here====");
+		// #1
+		System.out.printf("List of Names that start with letter B: %d%n",
+				list.stream().filter(name -> name.getName().startsWith("B")).count());
+		System.out.println("The list of employee who start with the letter B: ");
+		// 2
+		Function<Employee, String> getLastName = Employee::getLastName;
+		Comparator<Employee> empCompName = Comparator.comparing(getLastName);
+		list.stream().filter(name -> name.getLastName().startsWith("B")).sorted(empCompName)
+				.forEach(System.out::println);
+		System.out.println("List of Employees whose name starts withh letter B and changed to uppercase");
+		// 3
+		list.stream()
+				.filter(name -> name.getLastName().startsWith("B")).map(name -> {
+					 return name.getLastName().toUpperCase();
+					 //return true;
+							 })
+					 /*+ "\t"
+						+ name.getFirstName().toUpperCase() + "\t" + name.getSalary() + "\t" + name.getDepartment())*/
+				.forEach(System.out::println);
+		System.out.println("List of Employees if their name starts with letter B then capitalize them");
+		// 4
+		/*list.stream().filter(s -> {
+			 //if(s.getLastName().startsWith("B"))
+			s.getLastName().toUpperCase().startsWith("B");
+			return true;
+		}).forEach(s -> System.out.println(s));*/
 	} // end main
 } // end class ProcessingEmployees
