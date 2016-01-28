@@ -120,10 +120,9 @@ public class ProcessingEmployees {
 				.forEach(System.out::println);
 		System.out.println("List of Employees if their name starts with letter B then capitalize them");
 		// 4
-		/*list.stream().filter(s -> {
-			 //if(s.getLastName().startsWith("B"))
-			s.getLastName().toUpperCase().startsWith("B");
-			return true;
-		}).forEach(s -> System.out.println(s));*/
+		String st = "kibrom";
+		list.stream().filter(e->e.getLastName().startsWith("B"))
+		.map(e->new Employee(e.getFirstName(),e.getLastName().toUpperCase(),e.getSalary(),e.getDepartment()))
+		.forEach(System.out::println);
 	} // end main
 } // end class ProcessingEmployees
