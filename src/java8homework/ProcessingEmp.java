@@ -1,5 +1,6 @@
 package java8homework;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -102,7 +103,22 @@ public class ProcessingEmp {
 		System.out.println("creatin infinite stream and print only the first 20: ");
 		Stream<Integer> multipleOfTwo = Stream.iterate(0, n -> n + 2).limit(20);
 		multipleOfTwo.forEach(System.out::print);
+		
+		//3
+		System.out.println();
+		String[] lst = {"Kibrom","Dina","macha","helen"};
+		List<String> count = new ArrayList<>();;
+		count.addAll(Arrays.asList(lst));
+		//count.stream().forEach(System.out::println);
+		System.out.println("The number of words with the given letteres: " + countWords(count,'c','d',5));
 
+	}
+
+	public static int countWords(List<String> lst, char c, char d, int len) {
+		String str1 = "" + c;
+		String str2 = "" + d;
+		return (int) lst.stream().filter(e -> e.contains(str1)).filter(e -> !e.contains(str2))
+				.filter(e -> e.length() == len).count();
 	}
 
 }
