@@ -1,17 +1,13 @@
 package schoollabjava8stream;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.stream.Stream;
 
 public class Department {
 
 	private String name;
 	private ArrayList<Person> members;
 
-	// private ArrayList
-	// final double totalSalary = 0;
 	public Department(String name) {
 		this.name = name;
 		members = new ArrayList<Person>();
@@ -19,17 +15,6 @@ public class Department {
 
 	public double getTotalSalary() {
 
-		/*double totalSalary = 0.0;
-		for (Person list : members) {
-			if (list instanceof Faculty) {
-				Faculty faculty = (Faculty) list;
-				totalSalary += faculty.getSalary();
-			} else if (list instanceof Staff) {
-				Staff st = (Staff) list;
-				totalSalary += st.getSalary();
-			}
-		}
-*/
 		double facultySalary = members.stream().filter(e -> e instanceof Faculty).map((Function<Person, Faculty>) e -> {
 			return (Faculty) e;
 		}).mapToDouble(e -> e.getSalary()).sum();
@@ -82,7 +67,7 @@ public class Department {
 					}
 				}
 			}
-		}
+		}			
 
 	}
 

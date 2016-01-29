@@ -25,18 +25,19 @@ public class Faculty extends Person {
 	}
 
 	public void addCourse(Course course) {
+
 		courseList.add(course);
 	}
 
 	public void displayFacultyStudents() {
+
 		System.out.println("Name of faculty: " + getName());
-		
-		
+
 	}
-	
+
 	@Override
-	public String toString(){
-		
+	public String toString() {
+
 		return name + "\t" + phone + "\t" + age + "\t" + salary;
 	}
 }
