@@ -8,13 +8,17 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
+
 public class EmployeeInfo {
 
 	static enum SortMethod {
 		BYNAME, BYSALARY
 	};
 
-	SortMethod sorting;
+	static SortMethod sorting;
 
 	public EmployeeInfo() {
 
@@ -57,6 +61,14 @@ public class EmployeeInfo {
 		}
 		Collections.sort(emps, new EmployeeComparator());
 
+		/*
+		 * Collections.sort(emps, (e1, e2) -> { if (sorting ==
+		 * SortMethod.BYNAME) return e1.getName().compareTo(e2.getName()); else
+		 * if (sorting == SortMethod.BYSALARY) { if (e1.getSalary() ==
+		 * e2.getSalary()) return 0; else if (e1.getSalary() < e2.getSalary())
+		 * return -1; else return 1; } return 0; });
+		 */
+
 	}
 
 	public static List<String> findStartWithChar(List<String> lists, char c) {
@@ -86,6 +98,20 @@ public class EmployeeInfo {
 				.collect(Collectors.toList());
 
 	}
+
+	Comparator<Employee> empComapre = (e1, e2) -> {
+		if (sorting == SortMethod.BYNAME)
+			return e1.getName().compareTo(e2.getName());
+		else if (sorting == SortMethod.BYSALARY) {
+			if (e1.getSalary() == e2.getSalary())
+				return 0;
+			else if (e1.getSalary() > e2.getSalary())
+				return 1;
+			else
+				return -1;
+		}
+		return 0;
+	};
 
 	public static void main(String[] args) {
 
@@ -138,5 +164,6 @@ public class EmployeeInfo {
 		lst.add("kibrom");
 		lst.add("kebede");
 		System.out.println(empinfo.findStartWithChar(lst, 'c'));
+
 	}
 }
