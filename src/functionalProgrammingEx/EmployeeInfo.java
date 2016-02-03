@@ -165,5 +165,10 @@ public class EmployeeInfo {
 		lst.add("kebede");
 		System.out.println(empinfo.findStartWithChar(lst, 'c'));
 
+		Consumer<String> consumer = s->System.out.println(s);
+		System.out.println("Implementing Consumer");
+		lst.stream().forEach(consumer);
+		lst.stream().filter(e -> e.startsWith("c")).map(e -> e.toUpperCase()).forEach(e -> System.out.println(e));
+
 	}
 }
